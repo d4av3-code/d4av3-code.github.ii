@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D4av3 Website</title>
+  <!---->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+  <script>
+
+/*//////////////navegation funcionality
+    document.addEventListener("DOMContentLoaded", function() {
+      var currentlyDisplayed = null;
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+          link.classList.add('selected');
+            link.addEventListener('click', function() {
+            document.querySelectorAll('.nav-link').forEach(function(link) {
+              link.classList.remove('selected');
+                link.addEventListener('click', function() {
+                  document.querySelectorAll('.nav-link').forEach(function(link) {
+                    link.classList.remove('selected');
+                  });
+                  link.classList.add('selected');
+                    link.addEventListener('click', function() {
+                    document.querySelectorAll('.nav-link').forEach(function(link) {
+                      link.classList.remove('selected');
+                        link.addEventListener('click', function() {
+                          document.querySelectorAll('.nav-link').forEach(function(link) {
+                            link.classList.remove('selected');
+                              link.addEventListener('click', function() {
+                                document.querySelectorAll('.nav-link').forEach(function(link) {
+                                  link.classList.remove('selected');
+                                });
+                                //link.classList.add('selected');
+                              });
+                          });
+                        });
+                    });
+                  });
+              });
+            });
+          });
+        });
+      });
+///////////////navegation funcionality-END*/
+
+//new try of nav funcionality
+document.addEventListener("DOMContentLoaded", function() {
+      var currentlyDisplayed = "projects";
+      document.getElementById("projects").style.display = "block";
+
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+          link.classList.add('selected');
+        });
+      });
+//new try of nav funcionality-END
+
+      document.getElementById("language-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "language") {
+          document.getElementById("language").style.display = "none";
+          currentlyDisplayed = null;
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+        } else {
+          document.getElementById("language").style.display = "block";
+          /*
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          */
+          currentlyDisplayed = "language";
+        }
+      });
+      document.getElementById("overview-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "overview") {
+          document.getElementById("overview").style.display = "none";
+          currentlyDisplayed = null;
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+        } else {
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "block";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "overview";
+        }
+      });
+      document.getElementById("projects-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "projects") {
+          document.getElementById("projects").style.display = "none";
+          currentlyDisplayed = null;
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+        } else {
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "block";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "projects";
+        }
+      });
+      document.getElementById("about-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "about") {
+          document.getElementById("about").style.display = "none";
+          currentlyDisplayed = null;
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+        } else {
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "block";
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = "about";
+        }
+      });
+      document.getElementById("contact-link").addEventListener("click", function(event) {
+        event.preventDefault();
+        if (currentlyDisplayed === "contact") {
+          document.getElementById("contact").style.display = "none";
+          currentlyDisplayed = null;
+          document.querySelectorAll('.nav-link').forEach(function(link) {
+            link.classList.remove('selected');
+          });
+        } else {
+          document.getElementById("language").style.display = "none";
+          document.getElementById("overview").style.display = "none";
+          document.getElementById("projects").style.display = "none";
+          document.getElementById("about").style.display = "none";
+          document.getElementById("contact").style.display = "block";
+          currentlyDisplayed = "contact";
+        }
+      });
+      
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>D4ave Website / D4av3 Portfolio</h1>
+  </header>
+  <p></p>
+  <nav>
+    <li><a href="#language" id="language-link" class="nav-link">Language</a></li>
+    <ul>
+      <li><a href="#overview" id="overview-link" class="nav-link" >Overview</a></li>
+      <li>|</li>
+      <li><a href="#projects" id="projects-link" class="nav-link selected" >Projects & functions</a></li>
+      <li>|</li>
+      <li><a href="#about" id="about-link" class="nav-link" >About me</a></li>
+      <li>|</li>
+      <li><a href="#contact" id="contact-link" class="nav-link" >Contact me</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="language" style="display: none;">
+      <div id="google_translate_element"></div>
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+      </script>
+      <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <!--<p>
+        You can translate the content of this
+        page by selecting a language in the
+        select box.
+      </p>-->
+    </section>
+    <section id="overview" style="display: none;">
+      <h2>Overview</h2>
+      <p>Welcome to my website! Here is where i'm gonna upload my projects</p>
+      <img src="images&videos/programar.gif" alt="Programar">
+      <video width="500px" height="300px" controls="controls">
+        <source src="images&videos/programing.mp4" type="video/mp4" />
+        Video can't be showed
+      </video>
+    </section>
+    <section id="projects" style="display: none;">
+      <h2>Projects & functions</h2>
+      <p></p><strong><a href="projects/index.html">Here</a></strong>
+      are going to be all my projects</p>
+      <p>And all my functions</p>
+    </section>
+    <section id="about" style="display: none;">
+      <h2>About me</h2>
+      <div id="columns">
+        <li>My name is David Badal Beltran</li>
+        <li>I'm a Web programmer</li>
+        <li>I have a Higher Degree in Web Applications</li>
+        <li>I </li>
+      </div>
+    </section>
+    <section id="contact" style="display: none;">
+      <h2>Contact me</h2>
+      <p>If you are interested in contact me, you can contact by email at random@mail.com or by phone at 555-555-5555.</p>
+      <p>Github: <a href="https://github.com/d4av3">https://github.com/d4av3</a> </p>
+    </section>
+  </main>
+  <footer>
+    <hr />
+    <p>Copyright &copy; David Badal</p>
+    
+  </footer>
+</body>
+</html>
